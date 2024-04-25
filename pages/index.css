@@ -1,0 +1,40 @@
+@import url(../vendor/normalize.css);
+@import url(../vendor/fonts.css);
+@import url(../blocks/page.css);
+@import url(../blocks/header.css);
+@import url(../blocks/profile.css);
+@import url(../blocks/cards.css);
+@import url(../blocks/card.css);
+@import url(../blocks/footer.css);
+@keyframes beat {
+  0% {
+    transform: scale(1.1);
+  }
+  10% {
+    transform: scale(1.3);
+  }
+  25% {
+    transform: scale(1.6);
+  }
+  38% {
+    transform: scale(1.3);
+  }
+  49% {
+    transform: scale(1.1);
+  }
+  55% {
+    transform: scale(0.9);
+  }
+  65% {
+    transform: scale(1.5);
+  }
+  83% {
+    transform: scale(1.3);
+  }
+  95% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
