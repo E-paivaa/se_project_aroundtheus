@@ -1,0 +1,74 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  list-style: none;
+  font-family: "Inter", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  transition: all 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.1);
+}
+.card__image {
+  width: 282px;
+  height: 282px;
+  border-radius: 10px, 10px, 0, 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.card__image:hover {
+  opacity: 50%;
+}
+
+.card__image:active {
+  opacity: 100%;
+  transform: scale(1.2);
+}
+
+.card__description {
+  display: flex;
+  color: black;
+  background-color: white;
+  padding: 25px 20px 25px 20px;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.card__like-button {
+  background: transparent url(../images/like\ button.svg) center no-repeat;
+  width: 21px;
+  height: 18px;
+  border: 1px;
+}
+
+.card__like-button:hover {
+  opacity: 50%;
+  transition: all 1.5s ease-in-out;
+}
+
+.card__like-button:focus {
+  background: transparent url(../images/like\ button1.svg) center no-repeat;
+  animation: beat 1.3s infinite ease-in-out;
+}
+
+.card__title {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  margin: 0;
+}
+
+@media screen and (max-width: 750px) {
+  .card__like-button {
+    padding: 0;
+  }
+
+  .card__title {
+    width: 230px;
+  }
+}
