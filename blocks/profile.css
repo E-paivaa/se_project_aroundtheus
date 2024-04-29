@@ -49,6 +49,7 @@
   grid-area: button;
   position: relative;
   border: 1px solid #fff;
+  cursor: pointer;
 }
 
 .profile__edit-button:hover {
@@ -71,6 +72,7 @@
   margin-left: auto;
   border: 2px solid #fff;
   border-radius: 2px;
+  cursor: pointer;
 }
 
 .profile__add-button:hover {
