@@ -8,7 +8,7 @@ This project is the third project on tripleten used to implement the understandi
 
  [Link to the project on Figma]
  OG: (https://www.figma.com/file/ii4xxsJ0ghevUOcssTlHZv/Sprint-3%3A-Around-the-US?node-id=0%3A1)
- My Version: (https://e-paivaa.github.io/se_project_aroundtgitheus/)
+ My Version: (https://e-paivaa.github.io/se_project_aroundtheus/)
 
    -Images
 
