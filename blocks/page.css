@@ -22,6 +22,6 @@
 
 @media screen and (max-width: 750px) {
   .page__content {
-    width: 282px;
+    max-width: 282px;
   }
 }

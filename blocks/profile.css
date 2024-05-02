@@ -88,8 +88,6 @@
   }
 
   .profile__image {
-    width: 120px;
-    height: 120px;
     margin: 0;
   }
 
@@ -101,14 +99,13 @@
 
   .profile__title {
     font-size: 22px;
-    width: 196px;
+    max-width: 196px;
     margin-top: 30px;
+    margin-bottom: 14px;
   }
 
   .profile__description {
     text-align: center;
-    font-family: "Inter", Arial, sans-serif;
-    font-weight: 400;
     font-size: 14px;
   }
 
@@ -124,7 +121,6 @@
   .profile__edit-button {
     width: 18px;
     height: 18px;
-    border: 1px solid #fff;
     margin-top: 30px;
   }
 }
