@@ -6,15 +6,18 @@
 .header__logo {
   margin-bottom: 32px;
   display: flex;
+  max-width: 173px;
 }
 
 @media screen and (max-width: 750px) {
   .header__logo {
-    width: 126px;
+    max-width: 126px;
   }
 
   .header {
     max-width: 320px;
     margin-top: 28px;
+    padding: 0 27px;
+    box-sizing: border-box;
   }
 }

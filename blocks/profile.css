@@ -40,6 +40,9 @@
   font-size: 42px;
   margin: 0;
   grid-area: title;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .profile__edit-button {
@@ -63,6 +66,9 @@
   line-height: 22px;
   margin: 0;
   grid-area: description;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .profile__add-button {
@@ -95,24 +101,26 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 14px 10px;
   }
 
   .profile__title {
     font-size: 22px;
     max-width: 196px;
     margin-top: 30px;
-    margin-bottom: 14px;
+    line-height: 27px;
   }
 
   .profile__description {
     text-align: center;
     font-size: 14px;
+    max-width: 282px;
+    line-height: 17px;
   }
 
   .profile__add-button {
     width: 100%;
     max-width: 282px;
-    height: 50px;
     margin: 0 auto;
     display: flex;
     margin-top: 36px;
