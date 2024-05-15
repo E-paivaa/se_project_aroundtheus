@@ -9,6 +9,11 @@
     color: black;
     display: flex;
     padding: 0 19px;
+    display:none;
+  }
+
+  .modal_opened{
+    display:flex;
   }
   
   .modal__container {

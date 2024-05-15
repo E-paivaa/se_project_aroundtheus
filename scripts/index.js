@@ -15,11 +15,14 @@ link:"https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/aro
 
 console.log(initialCards);
 
-const profileEditButton = document.querySelector('#profile-edit-button');
-const profileEditModal = document.querySelector('#profile-edit-modal');
-const profileEditCloseButton = profileEditModal.querySelector(".modal__close");
+const profileEditButton = document.querySelector("#profile-edit-button");
+const profileEditModal = document.querySelector("#profile-edit-modal");
+const profileEditCloseButton = profileEditModal.querySelector("#profile-edit-modal");
 
 peofileEditButton.addEventListener('click', () => {
     profileEditModal.classList.add("modal_opened");});
-profileEditCloseButton.addEventListener("click", closePopup);
-profileEditModal.classList.remove("modal_opened");
+    profileModalBtn.addEventListener("click", closePopup);
+
+
+function closePopup(){
+profileEditModal.classList.remove("modal_opened");}
