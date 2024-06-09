@@ -8,6 +8,7 @@
   z-index: 999;
   padding: 0 19px;
   display: none;
+  font-family: "Inter", Arial, sans-serif;
 }
 
 .modal_opened {
@@ -84,7 +85,7 @@
   border: none;
   background-color: transparent;
   cursor: pointer;
-  transform: rotate(-90deg);
+  transform: rotate(-135deg);
 }
 
 .modal__close:hover {

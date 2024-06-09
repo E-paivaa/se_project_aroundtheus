@@ -59,7 +59,7 @@ const initialCards = [
     e.preventDefault(); 
     profileTitle.textContent = profileTitleInput.value;
     profileDescription.textContent = profileDescriptionInput.value;
-    closePopop();
+    closePopup();
   }
   initialCards.forEach((cardData) => {
     const cardElement = getCardElement(cardData);
@@ -73,5 +73,5 @@ const initialCards = [
     profileDescriptionInput.value = profileDescription.textContent;
     profileEditModal.classList.add('modal_opened');
   });
-  profileCloseButton.addEventListener("click", closePopup);
+  profileCloseButton.addEventListener('click', closePopup);
   profileEditForm.addEventListener("submit", handleProfileEditSubmit);
