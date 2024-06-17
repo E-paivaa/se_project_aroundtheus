@@ -51,18 +51,14 @@
   height: 282px;
   transition: all 0.5s ease-in-out;
   object-fit: cover;
-}
-
-.card__image:hover {
   opacity: 50%;
 }
 
-.card__image:active {
+.card__image:hover {
   opacity: 100%;
-  transform: scale(1.2);
 }
 
-.card__description {
+.card__text-container {
   display: flex;
   color: black;
   background-color: white;
@@ -87,6 +83,27 @@
 .card__like-button:focus {
   background: transparent url(../images/like\ button1.svg) center no-repeat;
   animation: beat 1.3s infinite ease-in-out;
+}
+
+.card__delete-button {
+  background-image: url(../images/delete.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: none;
+  width: 18px;
+  height: 19.3px;
+  position: absolute;
+  right: 15px;
+  top: 18px;
+  opacity: 0%;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.card__delete-button:hover {
+  opacity: 100%;
+  cursor: pointer;
 }
 
 .card__title {

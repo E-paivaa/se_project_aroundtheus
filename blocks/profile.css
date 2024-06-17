@@ -33,7 +33,7 @@
   align-items: center;
 }
 
-.profile__title {
+.profile__name {
   font-family: "Inter", Arial, sans-serif;
   font-weight: 500;
   line-height: 48px;
@@ -59,7 +59,7 @@
   opacity: 60%;
 }
 
-.profile__description {
+.profile__title {
   font-family: "Inter", Arial, sans-serif;
   font-weight: 400;
   font-size: 18px;
@@ -104,14 +104,14 @@
     gap: 14px 10px;
   }
 
-  .profile__title {
+  .profile__name {
     font-size: 22px;
     max-width: 196px;
     margin-top: 30px;
     line-height: 27px;
   }
 
-  .profile__description {
+  .profile__title {
     text-align: center;
     font-size: 14px;
     max-width: 282px;
