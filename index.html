@@ -42,7 +42,7 @@
       <form class="modal__form" id="profile-modal-form">
         <input type="text" name="name" class="modal__form-input" placeholder="Name" id="profile-name-input" />
         <input type="text" name="title" class="modal__form-input" placeholder="Description" id="profile-title-input" />
-        <button class="modal__save-button">Save</button>
+        <button class="modal__save-button" type="submit">Save</button>
       </form>
     </div>
   </div>
@@ -56,7 +56,7 @@
           id="card-title-input" />
         <input type="text" name="url" class="modal__form-input modal__form-input_type_url" placeholder="Image URL"
           id="image-url-input" />
-        <button class="modal__save-button">Create</button>
+        <button class="modal__save-button" type="submit">Create</button>
       </form>
     </div>
   </div>
@@ -76,12 +76,12 @@
       <img src="" alt="" class="card__image" />
       <div class="card__text-container">
         <h2 class="card__title"></h2>
-        <button class="card__like-button" type="submit"></button>
+        <button class="card__like-button card__like-button_active" type="button"></button>
         <button class="card__delete-button card__delete-button_active" type="button"></button>
       </div>
     </div>
   </template>
-  <script src="./scripts/index.js"></script>
+  <script src="./scripts/index.js" defer></script>
 </body>
 
 </html>

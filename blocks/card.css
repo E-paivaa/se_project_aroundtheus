@@ -68,22 +68,33 @@
 }
 
 .card__like-button {
+  background: transparent url(../images/heart-active.svg) center no-repeat;
+  width: 21px;
+  height: 18px;
+  border: 1px;
+  cursor: pointer;
+  transition: opacity 0.4s ease-in-out;
+  background-color: #fff;
+}
+
+.card__like-button_active {
   background: transparent url(../images/like\ button.svg) center no-repeat;
   width: 21px;
   height: 18px;
   border: 1px;
   cursor: pointer;
+  background-color: #fff;
 }
 
 .card__like-button:hover {
   opacity: 50%;
-  transition: all 1.5s ease-in-out;
+  cursor: pointer;
 }
 
-.card__like-button:focus {
+/*.card__like-button:focus {
   background: transparent url(../images/like\ button1.svg) center no-repeat;
   animation: beat 1.3s infinite ease-in-out;
-}
+} */
 
 .card__delete-button {
   background-image: url(../images/delete.svg);
