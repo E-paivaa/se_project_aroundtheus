@@ -1,4 +1,5 @@
 .modal {
+  display: flex;
   position: fixed;
   top: 0;
   left: 0;
@@ -16,11 +17,11 @@
 }
 
 .modal_opened {
-  display: flex;
   visibility: visible;
   opacity: 1;
   pointer-events: all;
   transition: visibility 0s, opacity 0.5s linear;
+  display: flex;
 }
 
 .modal__container {

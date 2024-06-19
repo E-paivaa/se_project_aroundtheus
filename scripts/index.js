@@ -27,6 +27,7 @@ const initialCards = [
 
 // Elements
 
+
 const profileName = document.querySelector(".profile__name");
 const profileTitle = document.querySelector(".profile__title");
 const profileNameInput = document.querySelector("#profile-name-input");
@@ -42,7 +43,7 @@ const cardTemplate =
 const cardTitleInput = addCardForm.querySelector("#card-title-input");
 const cardUrlInput = addCardForm.querySelector("#image-url-input");
 const previewImageModal = document.querySelector("#preview-image-modal");
-const modalDivs = document.querySelectorAll(".modal");
+const modals = document.querySelectorAll(".modal");
 
 // Buttons
 
@@ -70,7 +71,8 @@ function renderCard(cardData, cardListEl) {
 }
 
 addNewCardButton.addEventListener("click", () => openModal(addCardModal));
-addCardCloseButton.addEventListener("click", () => closeModal(addCardModal));
+//addNewCardButton.addEventListener("click", () => closeModal(addCardModal));
+
 
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
@@ -95,7 +97,7 @@ function getCardElement(cardData) {
   const cardTitleEl = cardElement.querySelector(".card__title");
   const deleteButton = cardElement.querySelector(".card__delete-button");
   const likeButton = cardElement.querySelector(".card__like-button")
-
+  
   cardImageEl.addEventListener("click", () => {
     const modalImage = previewImageModal.querySelector("#modal-image");
     const modalTitle = previewImageModal.querySelector("#modal-preview-image-title");
@@ -127,5 +129,16 @@ profileEditButton.addEventListener("click", () => {
 
 profileEditForm.addEventListener("submit", handleProfileFormSubmit);
 addCardModal.addEventListener("submit", handleAddCardFormSubmit);
+
+modals.forEach((modals) => {
+  modals.addEventListener("click", (event) => {
+    if (event.target.classList.contains("modal__close-button")) {
+      const modal = event.target.closest(".modal");
+      if (modal) {
+        closeModal(modal);
+      }
+    }
+  });
+});
 
 initialCards.forEach((cardData) => renderCard(cardData, cardListEl));
