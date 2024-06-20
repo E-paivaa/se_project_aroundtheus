@@ -8,7 +8,6 @@
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 999;
   padding: 0 19px;
-  display: none;
   font-family: "Inter", Arial, sans-serif;
   pointer-events: none;
   visibility: hidden;
@@ -21,7 +20,6 @@
   opacity: 1;
   pointer-events: all;
   transition: visibility 0s, opacity 0.5s linear;
-  display: flex;
 }
 
 .modal__container {
