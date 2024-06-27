@@ -44,7 +44,6 @@ const cardTemplate =
 const cardTitleInput = addCardForm.querySelector("#card-title-input");
 const cardUrlInput = addCardForm.querySelector("#image-url-input");
 const previewImageModal = document.querySelector("#preview-image-modal");
-const modals = document.querySelectorAll(".modal__close-button");
 
 // Buttons
 
@@ -139,5 +138,22 @@ addCardCloseButton.addEventListener("click", () => {
   cardUrlInput.textContent = cardUrlInput.value;
   closeModal(addCardModal);
 });
+
+  const modals = [addCardModal, profileEditModal, previewImageModal];
+modals.forEach((modal) => {
+  modal.addEventListener("click", closeModalByOverlay);
+});
+
+function closeModalByOverlay(evt) {
+  if (evt.target.classList.contains("modal")) {
+    closeModal(evt.target);
+  }
+}
+
+function closeModalESC(evt) {
+  if (evt.key === "Escape") {
+    const modal = document.querySelector(".modal_opened");
+    closeModal(modal);
+  }}
 
 initialCards.forEach((cardData) => renderCard(cardData, cardListEl));
