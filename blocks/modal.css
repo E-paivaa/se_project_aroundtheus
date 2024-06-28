@@ -132,6 +132,8 @@
 }
 
 .modal__error {
+  visibility: hidden;
+  display: block;
   color: #ff0000;
   font-size: 12px;
   line-height: 1.2;
@@ -148,6 +150,10 @@
   bottom: calc(32%);
 }
 
+.modal__error_visible{
+  visibility: visible;
+}
+
 .modal__button_disabled {
   opacity: 0.2;
   color: #000;
@@ -156,7 +162,7 @@
 }
 
 .modal__button_disabled:hover {
-  cursor: none;
+  cursor: default;
   opacity: 0.2;
 }
 
