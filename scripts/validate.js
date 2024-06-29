@@ -6,7 +6,7 @@ const config = {
     inputErrorClass: "modal__input_type_error",
     errorClass: "modal__error_visible",
   };
-  
+
   function showInputError(formEl, inputEl, { inputErrorClass, errorClass }) {
     const errorMessageEl = formEl.querySelector(`#${inputEl.id}-error`);
     if (errorMessageEl) {
@@ -33,6 +33,18 @@ const config = {
     }
   }
   
+  function setEventListeners(formEl, options) {
+    const { inputSelector, submitButtonSelector } = options;
+    const inputEls = formEl.querySelectorAll(inputSelector);
+    const submitButton = formEl.querySelector(submitButtonSelector);
+    inputEls.forEach((inputEl) => {
+      inputEl.addEventListener("input", () => {
+        checkInputValidity(formEl, inputEl, options);
+        toggleButtonState(inputEls, submitButton, options);
+      });
+    });
+  }
+
   function toggleButtonState(inputEls, submitButton, { inactiveButtonClass }) {
     const isFormValid = Array.from(inputEls).every(
       (inputEl) => inputEl.validity.valid
@@ -45,18 +57,6 @@ const config = {
       submitButton.classList.add(inactiveButtonClass);
       submitButton.disabled = true;
     }
-  }
-  
-  function setEventListeners(formEl, options) {
-    const { inputSelector, submitButtonSelector } = options;
-    const inputEls = formEl.querySelectorAll(inputSelector);
-    const submitButton = formEl.querySelector(submitButtonSelector);
-    inputEls.forEach((inputEl) => {
-      inputEl.addEventListener("input", () => {
-        checkInputValidity(formEl, inputEl, options);
-        toggleButtonState(inputEls, submitButton, options);
-      });
-    });
   }
   
   function enableValidation(options) {

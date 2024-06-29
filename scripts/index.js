@@ -80,7 +80,6 @@ function handleProfileFormSubmit(evt) {
 
 function handleAddCardFormSubmit(evt) {
   evt.preventDefault();
-  const form = e.target;
   const name = cardTitleInput.value;
   const link = cardUrlInput.value;
   cardTitleInput.value = "";

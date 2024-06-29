@@ -132,26 +132,26 @@
 }
 
 .modal__error {
-  visibility: hidden;
-  display: block;
   color: #ff0000;
   font-size: 12px;
   line-height: 1.2;
   position: absolute;
   left: 36px;
   transition: opacity 0.3s;
+  visibility: hidden;
+  display: block;
 }
 
-.modal__error:first-of-type {
-  bottom: calc(50%);
-}
-
-.modal__error:last-of-type {
-  bottom: calc(32%);
-}
-
-.modal__error_visible{
+.modal__error_visible {
   visibility: visible;
+}
+
+.modal__error_visible:first-of-type {
+  bottom: calc(51%);
+}
+
+.modal__error_visible:last-of-type {
+  bottom: calc(31%);
 }
 
 .modal__button_disabled {
