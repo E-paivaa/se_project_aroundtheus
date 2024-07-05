@@ -62,25 +62,27 @@
 }
 
 .modal__form {
-  max-width: 100%;
+  width: 100%;
 }
 
 .modal__form-input {
-  width: 100%;
-  height: 28px;
-  margin-bottom: 30px;
-  border: 0;
+  border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  border-top: #000;
-  border-left: #000;
-  border-right: #000;
-  font-size: 14px;
+  outline: none;
   font-weight: 400;
-  line-height: 17px;
-  padding-bottom: 13px;
+  font-size: 14px;
+  line-height: 16.94px;
+  padding-bottom: 13.04px;
+  width: 100%;
 }
 
 .modal__form-input:last-of-type {
+  margin-top: 45px;
+}
+
+.modal__input_type_error {
+  border-bottom: 1px solid #ff0000;
+  color: rgba(0, 0, 0, 0.2);
   margin-bottom: 0;
 }
 
@@ -132,26 +134,22 @@
 }
 
 .modal__error {
+  visibility: hidden;
+  position: absolute;
+  display: block;
+  padding: 0;
+  font-family: Inter, Arial, sans-serif;
   color: #ff0000;
   font-size: 12px;
-  line-height: 1.2;
-  position: absolute;
-  left: 36px;
-  transition: opacity 0.3s;
-  visibility: hidden;
-  display: block;
+  font-weight: 400;
+  line-height: 14.52px;
+  text-align: left;
+  margin-top: 5px;
+  transition: opacity 0.03s;
 }
 
 .modal__error_visible {
   visibility: visible;
-}
-
-.modal__error_visible:first-of-type {
-  bottom: calc(51%);
-}
-
-.modal__error_visible:last-of-type {
-  bottom: calc(31%);
 }
 
 .modal__button_disabled {

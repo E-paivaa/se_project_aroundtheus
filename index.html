@@ -40,13 +40,15 @@
       <button class="modal__close-button" id="profile-edit-close-button" type="button"></button>
       <h2 class="modal__heading">Edit profile</h2>
       <form class="modal__form" id="profile-modal-form">
-        <input type="text" name="name" class="modal__form-input" placeholder="Name" id="profile-name-input"
-          minlength="2" maxlength="40" required />
-        <span id="profile-name-input-error" class="modal__error">Please fill out this field.</span>
-        <input type="text" name="title" class="modal__form-input" placeholder="Description" id="profile-title-input"
-          minlength="2" maxlength="400" required />
-        <span id="profile-title-input-error" class="modal__error">Please fill out this field.</span>
-        <button class="modal__save-button modal__button_disabled" type="submit">Save</button>
+        <label class="profile-name-input">
+          <input type="text" name="name" class="modal__form-input" placeholder="Name" id="profile-name-input"
+            minlength="2" maxlength="40" required />
+          <span id="profile-name-input-error" class="modal__error">Please fill out this field.</span></label>
+        <label class="profile-title-input">
+          <input type="text" name="title" class="modal__form-input" placeholder="Description" id="profile-title-input"
+            minlength="2" maxlength="400" required />
+          <span id="profile-title-input-error" class="modal__error">Please fill out this field.</span></label>
+        <button class="modal__save-button modal__button_disabled" type="submit" disabled>Save</button>
       </form>
     </div>
   </div>
@@ -56,14 +58,16 @@
       <button class="modal__close-button" id="add-card-modal-button-close" type="button"></button>
       <h2 class="modal__heading">New Place</h2>
       <form class="modal__form" id="add-card-form">
-        <input type="text" name="title" class="modal__form-input modal__form-input_type_title " placeholder="Title"
-          id="card-title-input" minlength="2" maxlength="30" required />
-        <span class="modal__error" id="card-title-input-error">Please fill out this field.</span>
-        <input type="url" name="image-url" class="modal__form-input modal__form-input_type_url" placeholder="Image URL"
-          id="image-url-input" required />
-        <span id="image-url-input-error" class="modal__error">Please enter a web address.</span>
+        <label for="card-title-input">
+          <input type="text" name="title" class="modal__form-input modal__form-input_type_title" placeholder="Title"
+            id="card-title-input" minlength="2" maxlength="30" required />
+          <span class="modal__error" id="card-title-input-error">Please fill out this field.</span></label>
+        <label for="image-url-input">
+          <input type="url" name="image-url" class="modal__form-input modal__form-input_type_url"
+            placeholder="Image URL" id="image-url-input" required />
+          <span id="image-url-input-error" class="modal__error">Please enter a web address.</span></label>
       </form>
-      <button class="modal__save-button modal__button_disabled" type="submit">Create</button>
+      <button class="modal__save-button modal__button_disabled" type="submit" disabled>Create</button>
       </form>
     </div>
   </div>
