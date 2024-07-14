@@ -98,7 +98,7 @@ function handleImageClick(name, link) {
 }
 
 function createCard(cardData) {
-  const card = new Card(cardData, cardTemplate, handleImageClick);
+  const card = new Card(cardData, "#card-template", handleImageClick);
   const cardElement = card.getView();
   return cardElement;
 }
