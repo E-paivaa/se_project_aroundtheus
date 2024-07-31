@@ -22,7 +22,7 @@ module.exports = {
     port: 8080,
     open: true,
     liveReload: true,
-    hot: true,
+    hot: false,
   },
   module: {
     rules: [
@@ -50,6 +50,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: "./src/index.html",
+      favicon: "./favicon.ico",
     }),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin(),

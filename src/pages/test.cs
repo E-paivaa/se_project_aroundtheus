@@ -1,15 +1,11 @@
-// Imports
-
+import "../pages/index.css";
 import Card from "../components/Card.js";
 import FormValidator from "../components/FormValidator.js";
-import {initialCards,config} from "../utils/constant.js";
-import Section from "../components/Section.js";
-import PopupWithImage from "../components/PopupWithImage.js";
-import PopupWithForm from "../components/PopupWithForm.js";
 import UserInfo from "../components/UserInfo.js";
-
-
-
+import PopupWithForm from "../components/PopupWithForm.js";
+import PopupWithImage from "../components/PopupWithImage.js";
+import Section from "../components/Section.js";
+import { initialCards, config } from "../utils/constants.js";
 
 // Elements
 
@@ -20,7 +16,7 @@ const profileTitleInput = document.querySelector("#profile-title-input");
 const profileEditModal = document.querySelector("#profile-edit-modal");
 const profileEditForm = profileEditModal.querySelector("#profile-modal-form");
 const addCardModal = document.querySelector("#add-card-modal");
-const addCardButton = document.querySelector(".profile__add-button");
+const addNewCardModalButton = document.querySelector(".profile__add-button");
 const addCardForm = addCardModal.querySelector("#add-card-form");
 const cardListEl = document.querySelector(".cards");
 const cardTemplate =
@@ -41,67 +37,52 @@ const modalTitle = previewImageModal.querySelector(
   "#modal-preview-image-title"
 );
 
+// Components 
 
-
-// Create Card Function
-
-function createCard(cardData) {
-  const card = new Card(cardData, "#card-template", handleImageClick);
-  return card.getView();
-}
-const renderCard = (cardData) => {
-  const card = createCard(cardData);
-  section.addItem(card);
-};
-
-
-// Section
-
-const section = new Section({items: initialCards, renderer: renderCard},".cards");
+const section = new Section(
+  { items: initialCards, renderer: renderCard },
+  ".cards"
+);
 section.renderItems();
 
-
-
-// Image Popup
-
-const newImagePopup = new PopupWithImage("#modal-image");
+const newImagePopup = new PopupWithImage("#image-modal");
 newImagePopup.setEventListeners();
 
-
-
-// Form Popup -Profile
-
-const editProfilePopup = new PopupWithForm({popupSelector: "#profile-edit-modal",handleFormSubmit: handleProfileFormSubmit});
+const editProfilePopup = new PopupWithForm({
+  popupSelector: "#profile-edit-modal",
+  handleFormSubmit: handleProfileEditSubmit,
+});
 editProfilePopup.setEventListeners();
 
-
-
-// Form Popup -Card
-
-const newCardPopup = new PopupWithForm({popupSelector:"#add-card-modal", handleFormSubmit:handleAddCardFormSubmit});
+const newCardPopup = new PopupWithForm({
+  popupSelector: "#add-card-modal",
+  handleFormSubmit: handleAddCardFormSubmit,
+});
 newCardPopup.setEventListeners();
-
-
-
-// User Info
 
 const userInfo = new UserInfo(profileName, profileTitle);
 
+// Functions
 
+function createCard(cardData) {
+  const card = new Card(cardData, "#card-template", handleImageClick);
+  const cardElement = card.getView();
+  return cardElement;
+}
 
-// Profile Submit Form Function
+function renderCard(cardData, cardListEl) {
+  const cardElement = createCard(cardData);
+  cardListEl.prepend(cardElement);
+  section.addItem(card);
+}
 
-function handleProfileFormSubmit(userData) {
+function handleProfileEditSubmit(userData) {
   const name = userData.title;
   const description = userData.description;
   userInfo.setUserInfo({ name, description });
   editProfilePopup.close();
   profileEditForm.reset();
-  addCardFormValidator.disableButton();
 }
-
-// AddCard Submit Form Function
-
 
 function handleAddCardFormSubmit(userInfo) {
   const name = userInfo.title;
@@ -112,33 +93,26 @@ function handleAddCardFormSubmit(userInfo) {
   addCardFormValidator.disableButton();
 }
 
-// Image Click Function
-
 function handleImageClick(cardData) {
   newImagePopup.open(cardData);
 }
 
-    //----------------Event Listener----------------//
-
-
-// Profile Edit Button
+// Event Listeners
 
 profileEditButton.addEventListener("click", () => {
-  const { description, name } = userInfo.getUserInfo();
-  profileNameInput.value = name;
-  profileTitleInput.value = description;
+  profileNameInput.value = userInfo.getUserInfo().name;
+  profileTitleInput.value = userInfo.getUserInfo().description;
   editProfilePopup.open();
 });
 
-// AddCard Button
-
-addCardButton.addEventListener("click", () => {
+addNewCardModalButton.addEventListener("click", () => {
   newCardPopup.open();
 });
 
-// Form Validator
+// Validators
 
 const profileFormValidator = new FormValidator(config, profileEditForm);
 profileFormValidator.enableValidation();
+
 const addCardFormValidator = new FormValidator(config, addCardForm);
 addCardFormValidator.enableValidation();

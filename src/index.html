@@ -15,12 +15,12 @@
 
 <body class="page">
   <header class="header page__section">
-    <img src="./images/logo.svg" alt="Around the U.S Logo" class="header__logo" />
+    <img src="{%=require('./images/logo.svg')%}" alt="Around the U.S Logo" class="header__logo" />
   </header>
   <div class="page__content">
     <main class="content">
       <section class="profile">
-        <img src="./images/jacques-cousteau.png" alt="Avatar" class="profile__image" />
+        <img src="<%=require('./images/jacques-cousteau.png')%>" alt="Avatar" class="profile__image" />
         <div class="profile__info">
           <h1 class="profile__name">Jacques Cousteau</h1>
           <button class="profile__edit-button" id="profile-edit-button" type="button"></button>
