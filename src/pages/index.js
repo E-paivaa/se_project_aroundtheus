@@ -1,5 +1,6 @@
 // Imports
 
+import "../pages/index.css";
 import Card from "../components/Card.js";
 import FormValidator from "../components/FormValidator.js";
 import {initialCards,config} from "../utils/constant.js";
@@ -7,9 +8,6 @@ import Section from "../components/Section.js";
 import PopupWithImage from "../components/PopupWithImage.js";
 import PopupWithForm from "../components/PopupWithForm.js";
 import UserInfo from "../components/UserInfo.js";
-
-
-
 
 // Elements
 
@@ -64,7 +62,7 @@ section.renderItems();
 
 // Image Popup
 
-const newImagePopup = new PopupWithImage("#modal-image");
+const newImagePopup = new PopupWithImage("#preview-image-modal");
 newImagePopup.setEventListeners();
 
 
