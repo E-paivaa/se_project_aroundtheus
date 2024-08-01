@@ -9,17 +9,16 @@
   <meta name="description" content="Around the US page" />
   <meta name="keywords" content="HTML. CSS" />
   <title>Around the US</title>
-  <link rel="shortcut icon" href="favicon.ico" />
 </head>
 
 <body class="page">
   <header class="header page__section">
-    <img src="<%=require('./images/logo.svg')%>" alt="Around the U.S Logo" class="header__logo" />
+    <img src="%=require('./images/logo.svg')%>" alt="Around the U.S Logo" class="header__logo" />
   </header>
   <div class="page__content">
     <main class="content">
       <section class="profile">
-        <img src="<%=require('./images/jacques-cousteau.png')%>" alt="Avatar" class="profile__image" />
+        <img src="%=require('./images/jacques-cousteau.png')%>" alt="Avatar" class="profile__image" />
         <div class="profile__info">
           <h1 class="profile__name">Jacques Cousteau</h1>
           <button class="profile__edit-button" id="profile-edit-button" type="button"></button>
@@ -91,7 +90,7 @@
       </div>
     </div>
   </template>
-  <script src=".//pages/index.js" defer type="module"></script>
+  <script src="./pages/index.js" defer type="module"></script>
 </body>
 
 </html>
