@@ -95,7 +95,6 @@ function handleProfileFormSubmit(userData) {
   userInfo.setUserInfo({ name, description });
   editProfilePopup.close();
   profileEditForm.reset();
-  addCardFormValidator.disableButton();
 }
 
 // AddCard Submit Form Function
@@ -107,7 +106,6 @@ function handleAddCardFormSubmit(userInfo) {
   renderCard({ name, link }, cardListEl);
   addCardForm.reset();
   newCardPopup.close();
-  addCardFormValidator.disableButton();
 }
 
 // Image Click Function
