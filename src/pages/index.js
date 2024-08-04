@@ -89,7 +89,7 @@ const userInfo = new UserInfo(profileName, profileTitle);
 
 function handleProfileFormSubmit(userData) {
   const name = userData.name;
-  const description = userData.title;
+  const description = userData.description;
   userInfo.setUserInfo({ name, description });
   editProfilePopup.close();
   profileEditForm.reset();
