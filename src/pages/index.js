@@ -39,8 +39,6 @@ const modalTitle = previewImageModal.querySelector(
   "#modal-preview-image-title"
 );
 
-
-
 // Create Card Function
 
 function createCard(cardData) {
@@ -90,8 +88,8 @@ const userInfo = new UserInfo(profileName, profileTitle);
 // Profile Submit Form Function
 
 function handleProfileFormSubmit(userData) {
-  const name = userData.title;
-  const description = userData.description;
+  const name = userData.name;
+  const description = userData.title;
   userInfo.setUserInfo({ name, description });
   editProfilePopup.close();
   profileEditForm.reset();
@@ -114,6 +112,13 @@ function handleImageClick(cardData) {
   newImagePopup.open(cardData);
 }
 
+// Form Validator
+
+const profileFormValidator = new FormValidator(config, profileEditForm);
+profileFormValidator.enableValidation();
+const addCardFormValidator = new FormValidator(config, addCardForm);
+addCardFormValidator.enableValidation();
+
     //----------------Event Listener----------------//
 
 
@@ -121,8 +126,8 @@ function handleImageClick(cardData) {
 
 profileEditButton.addEventListener("click", () => {
   const { description, name } = userInfo.getUserInfo();
-  profileNameInput.value = name;
-  profileTitleInput.value = description;
+  profileName.value = name;
+  profileTitle.value = description;
   editProfilePopup.open();
 });
 
@@ -131,10 +136,3 @@ profileEditButton.addEventListener("click", () => {
 addCardButton.addEventListener("click", () => {
   newCardPopup.open();
 });
-
-// Form Validator
-
-const profileFormValidator = new FormValidator(config, profileEditForm);
-profileFormValidator.enableValidation();
-const addCardFormValidator = new FormValidator(config, addCardForm);
-addCardFormValidator.enableValidation();
