@@ -71,7 +71,7 @@ const editProfilePopup = new PopupWithForm({popupSelector: "#profile-edit-modal"
 editProfilePopup.setEventListeners();
 
 
-
+ 
 // Form Popup -Card
 
 const newCardPopup = new PopupWithForm({popupSelector:"#add-card-modal", handleFormSubmit:handleAddCardFormSubmit});
@@ -88,8 +88,7 @@ const userInfo = new UserInfo(profileName, profileTitle);
 // Profile Submit Form Function
 
 function handleProfileFormSubmit(userData) {
-  const name = userData.name;
-  const description = userData.description;
+  const {modal__input_type_name: name, modal__input_type_description: description} = userData;
   userInfo.setUserInfo({ name, description });
   editProfilePopup.close();
   profileEditForm.reset();
