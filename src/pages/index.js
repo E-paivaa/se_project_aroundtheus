@@ -125,8 +125,8 @@ addCardFormValidator.enableValidation();
 
 profileEditButton.addEventListener("click", () => {
   const { description, name } = userInfo.getUserInfo();
-  profileName.value = name;
-  profileTitle.value = description;
+  profileNameInput.value = name;
+  profileTitleInput.value = description;
   editProfilePopup.open();
 });
 
