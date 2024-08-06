@@ -67,14 +67,14 @@ newImagePopup.setEventListeners();
 
 // Form Popup -Profile
 
-const editProfilePopup = new PopupWithForm({popupSelector: "#profile-edit-modal",handleFormSubmit: handleProfileFormSubmit});
+const editProfilePopup = new PopupWithForm("#profile-edit-modal",handleProfileFormSubmit);
 editProfilePopup.setEventListeners();
 
 
  
 // Form Popup -Card
 
-const newCardPopup = new PopupWithForm({popupSelector:"#add-card-modal", handleFormSubmit:handleAddCardFormSubmit});
+const newCardPopup = new PopupWithForm("#add-card-modal", handleAddCardFormSubmit);
 newCardPopup.setEventListeners();
 
 
