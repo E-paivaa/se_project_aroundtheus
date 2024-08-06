@@ -87,9 +87,9 @@ const userInfo = new UserInfo(profileName, profileTitle);
 
 // Profile Submit Form Function
 
-function handleProfileFormSubmit(userData) {
-  const {modal__input_type_name: name, modal__input_type_description: description} = userData;
-  userInfo.setUserInfo({ name, description });
+function handleProfileFormSubmit(profileData) {
+  const {name:name,description:about} = profileData;
+  userInfo.setUserInfo(name, about);
   editProfilePopup.close();
   profileEditForm.reset();
 }
@@ -124,9 +124,9 @@ addCardFormValidator.enableValidation();
 // Profile Edit Button
 
 profileEditButton.addEventListener("click", () => {
-  const { description, name } = userInfo.getUserInfo();
-  profileNameInput.value = name;
-  profileTitleInput.value = description;
+  const userData = userInfo.getUserInfo();
+  profileNameInput.value = userData.name;
+  profileTitleInput.value = userData.about;
   editProfilePopup.open();
 });
 
