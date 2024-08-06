@@ -1,13 +1,12 @@
-import { data } from "autoprefixer";
 import Popup from "./Popup.js";
 
 export default class PopupWithForm extends Popup {
-  constructor({ popupSelector, handleFormSubmit, userInfo }) {
+  constructor(popupSelector, handleFormSubmit) {
     super({ popupSelector });
     this._popupForm = this._popupElement.querySelector("form");
     this._inputList = [...this._popupForm.querySelectorAll("input")];
     this._handleFormSubmit = handleFormSubmit;
-    this._userInfo = userInfo;
+    this._setEventListeners();
   }
 
   _getInputValues() {
@@ -19,7 +18,6 @@ export default class PopupWithForm extends Popup {
   }
 
   setEventListeners() {
-    super.setEventListeners();
     this._popupForm.addEventListener("submit", (evt) => {
       evt.preventDefault();
       const data = this._getInputValues();
