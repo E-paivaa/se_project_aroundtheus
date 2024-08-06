@@ -20,7 +20,7 @@
       <section class="profile">
         <img src="<%=require('./images/jacques-cousteau.png')%>" alt="Avatar" class="profile__image" />
         <div class="profile__info">
-          <h1 class="profile__name">Jacques Cousteau</h1>
+          <h1 class="profile__name">Jacque Cousteau</h1>
           <button class="profile__edit-button" id="profile-edit-button" type="button"></button>
           <p class="profile__title">Explorer</p>
         </div>
@@ -43,7 +43,7 @@
             minlength="2" maxlength="40" required />
           <span id="profile-name-input-error" class="modal__error">Please fill out this field.</span></label>
         <label class="profile-title-input">
-          <input type="text" name="title" class="modal__form-input" placeholder="Description" id="profile-title-input"
+          <input type="text" name="description" class="modal__form-input" placeholder="Description" id="profile-title-input"
             minlength="2" maxlength="400" required />
           <span id="profile-title-input-error" class="modal__error">Please fill out this field.</span></label>
         <button class="modal__save-button modal__button_disabled" type="submit" disabled>Save</button>
@@ -61,7 +61,7 @@
             id="card-title-input" minlength="2" maxlength="30" required />
           <span class="modal__error" id="card-title-input-error">Please fill out this field.</span></label>
         <label for="image-url-input">
-          <input type="url" name="image-url" class="modal__form-input modal__form-input_type_url"
+          <input type="url" name="url" class="modal__form-input modal__form-input_type_url"
             placeholder="Image URL" id="image-url-input" required />
           <span id="image-url-input-error" class="modal__error">Please enter a web address.</span></label>
         <button class="modal__save-button modal__button_disabled" type="submit" disabled>Create</button>
@@ -90,7 +90,6 @@
       </div>
     </div>
   </template>
-  <script src="/src/pages/index.js" defer type="module"></script>
 </body>
 
 </html>

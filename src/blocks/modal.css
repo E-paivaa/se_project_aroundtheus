@@ -230,7 +230,7 @@
     line-height: 21.78px;
   }
   .modal__form {
-    margin-top: 75px;
+    max-width:100%;
   }
   .modal__input {
     max-width: 238px;

@@ -39,8 +39,6 @@ const modalTitle = previewImageModal.querySelector(
   "#modal-preview-image-title"
 );
 
-
-
 // Create Card Function
 
 function createCard(cardData) {
@@ -69,14 +67,14 @@ newImagePopup.setEventListeners();
 
 // Form Popup -Profile
 
-const editProfilePopup = new PopupWithForm({popupSelector: "#profile-edit-modal",handleFormSubmit: handleProfileFormSubmit});
+const editProfilePopup = new PopupWithForm("#profile-edit-modal",handleProfileFormSubmit);
 editProfilePopup.setEventListeners();
 
 
-
+ 
 // Form Popup -Card
 
-const newCardPopup = new PopupWithForm({popupSelector:"#add-card-modal", handleFormSubmit:handleAddCardFormSubmit});
+const newCardPopup = new PopupWithForm("#add-card-modal", handleAddCardFormSubmit);
 newCardPopup.setEventListeners();
 
 
@@ -89,10 +87,9 @@ const userInfo = new UserInfo(profileName, profileTitle);
 
 // Profile Submit Form Function
 
-function handleProfileFormSubmit(userData) {
-  const name = userData.title;
-  const description = userData.description;
-  userInfo.setUserInfo({ name, description });
+function handleProfileFormSubmit(profileData) {
+  const {name:name,description:about} = profileData;
+  userInfo.setUserInfo(name, about);
   editProfilePopup.close();
   profileEditForm.reset();
 }
@@ -114,15 +111,22 @@ function handleImageClick(cardData) {
   newImagePopup.open(cardData);
 }
 
+// Form Validator
+
+const profileFormValidator = new FormValidator(config, profileEditForm);
+profileFormValidator.enableValidation();
+const addCardFormValidator = new FormValidator(config, addCardForm);
+addCardFormValidator.enableValidation();
+
     //----------------Event Listener----------------//
 
 
 // Profile Edit Button
 
 profileEditButton.addEventListener("click", () => {
-  const { description, name } = userInfo.getUserInfo();
-  profileNameInput.value = name;
-  profileTitleInput.value = description;
+  const userData = userInfo.getUserInfo();
+  profileNameInput.value = userData.name;
+  profileTitleInput.value = userData.about;
   editProfilePopup.open();
 });
 
@@ -131,10 +135,3 @@ profileEditButton.addEventListener("click", () => {
 addCardButton.addEventListener("click", () => {
   newCardPopup.open();
 });
-
-// Form Validator
-
-const profileFormValidator = new FormValidator(config, profileEditForm);
-profileFormValidator.enableValidation();
-const addCardFormValidator = new FormValidator(config, addCardForm);
-addCardFormValidator.enableValidation();
