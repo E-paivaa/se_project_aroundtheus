@@ -1,0 +1,36 @@
+.add-button {
+  max-width: 150px;
+  width: 100%;
+  min-width: 50px;
+  height: 50px;
+  border: solid 2px #fff;
+  background-color: black;
+  margin: 35px 0 35px 18px;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.add-button__image {
+  width: 22px;
+  height: 22px;
+  margin: auto;
+}
+
+.add-button:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 770px) {
+  .add-button {
+    transition: opacity 2s ease-in-out;
+  }
+}
+
+@media screen and (max-width: 637px) {
+  .add-button {
+    max-width: 282px;
+    padding: 0;
+    margin: 35px 0 0;
+  }
+}

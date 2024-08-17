@@ -1,0 +1,237 @@
+.modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  align-items: center;
+  justify-content: center;
+  padding: 0 19px;
+  display: flex;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.25s, opacity 0.25s linear;
+}
+
+.modal_opened {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal__container {
+  position: relative;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  border: solid 1px #000;
+  max-width: 430px;
+  width: 100%;
+  min-height: 330px;
+}
+
+.modal__container_delete-check {
+  position: relative;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  border: solid 1px #000;
+  max-width: 430px;
+  width: 100%;
+  min-height: 182px;
+}
+
+.modal__container_image {
+  position: relative;
+  max-width: 75vw;
+  max-height: 75vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal__preview-image {
+  max-width: 75vw;
+  max-height: 75vh;
+  width: auto;
+  height: auto;
+  border-radius: 0;
+  object-fit: contain;
+}
+
+.modal__image-preview_text {
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  line-height: 1.2;
+  font-weight: 400;
+  color: #fff;
+  position: absolute;
+  bottom: -30px;
+  max-width: 291px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.modal__content {
+  padding: 34px 36px 36px;
+}
+
+.modal__close {
+  position: absolute;
+  cursor: pointer;
+  bottom: calc(100% + 5px);
+  left: calc(100% + 5px);
+  background-image: url(../images/close-button.svg);
+  border: none;
+  background-color: transparent;
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: opacity 0.5s ease-in-out;
+  padding: 0;
+}
+
+.modal__close:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.modal__heading {
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 1.2;
+  max-width: 330px;
+  min-height: 23px;
+  margin: 34px auto 54px 0;
+}
+
+.modal__heading_delete-check {
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 1.2;
+  max-width: 358px;
+  min-height: 23px;
+  margin: 0 auto 38px 0;
+}
+
+.modal__form {
+  width: 100%;
+}
+
+.modal__input {
+  width: calc(100% - 4px);
+  margin: 0 0 30px;
+  border: none;
+  border-bottom: solid 1px #000;
+  padding: 0 0 13px;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.2;
+  color: #000;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
+}
+
+.modal__input_type_error {
+  margin: 0 0 5px;
+  border-bottom: solid 1px #ff0000;
+}
+
+.modal__error {
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.2;
+  color: #ff0000;
+  opacity: 0;
+}
+
+.modal__error_visible {
+  transition: opacity 0.25s linear;
+  opacity: 1;
+}
+
+.modal__input::placeholder {
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.2;
+  color: #000;
+}
+
+.modal__form:nth-child(2) {
+  margin: 0 48px 0;
+}
+
+.modal__button {
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  line-height: 1.2;
+  font-weight: 400;
+  text-align: center;
+  color: #fff;
+  background-color: #000;
+  width: 100%;
+  min-height: 50px;
+  margin: 0 0 36px;
+  padding: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.modal__button_delete-check {
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  line-height: 1.2;
+  font-weight: 400;
+  text-align: center;
+  color: #fff;
+  background-color: #000;
+  width: 100%;
+  min-height: 50px;
+  margin: 0;
+  padding: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.modal__button_disabled {
+  margin: 31px 0 36px;
+  opacity: 0.2;
+  background-color: #fff;
+  color: #000;
+}
+
+.modal__button:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.modal__button_disabled:hover {
+  opacity: 0.2;
+  cursor: default;
+}
+
+@media screen and (max-width: 637px) {
+  .modal__content {
+    padding: 22px;
+  }
+
+  .modal__heading {
+    font-size: 18px;
+    margin: 3px auto 75px 0;
+  }
+
+  .modal__close {
+    bottom: calc(100% + 13px);
+    left: calc(100% - 26px);
+    width: 26px;
+    height: 26px;
+  }
+}

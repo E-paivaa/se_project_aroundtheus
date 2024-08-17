@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Cole Essig" />
+    <meta
+      name="keywords"
+      content="Travel, Learning, Pictures, Outdoors, Exploring"
+    />
+    <meta
+      name="description"
+      content="A place to show off photos of the beauty of the US and to help share exploration"
+    />
+
+    <link href="favicon.ico" rel="icon" />
+
+    <title>Around the US</title>
+  </head>
+  <body>
+    <div class="page">
+      <div class="page__content">
+        <header class="header">
+          <img
+            src="<%=require('./images/Logo-title.svg')%>"
+            alt="Vector image title logo"
+            class="header__logo"
+          />
+        </header>
+        <main>
+          <section class="profile">
+            <div class="profile__info">
+              <div class="profile__avatar_container">
+                <button class="profile__avatar_edit-button">
+                  <img
+                    src="<%=require('./images/edit-button.svg')%>"
+                    alt="Small stylus showing an edit function"
+                    class="edit-button__image-avatar"
+                  />
+                </button>
+                <img
+                  src=""
+                  alt="Profile Picture of User"
+                  class="profile__picture"
+                />
+              </div>
+              <div class="profile__section">
+                <h1 class="profile__name" id="profile-name">
+                  Jacques Cousteau
+                </h1>
+                <button
+                  class="edit-button"
+                  aria-label="Edit button for profile name"
+                  type="button"
+                  id="profile-edit-button"
+                >
+                  <img
+                    src="<%=require('./images/edit-button.svg')%>"
+                    alt="Small stylus showing an edit function"
+                    class="edit-button__image"
+                  />
+                </button>
+              </div>
+              <p class="profile__badge" id="profile-badge">Explorer</p>
+            </div>
+            <button
+              class="add-button"
+              aria-label="Button for adding photos to page"
+              type="button"
+              id="card-add-button"
+            >
+              <img
+                src="<%=require('./images/add-button.svg')%>"
+                alt="Plus sign for the add picture button"
+                class="add-button__image"
+              />
+            </button>
+          </section>
+
+          <section class="cards"></section>
+        </main>
+        <footer class="footer">
+          <p class="footer__copyright">© 2022 Around The U.S.</p>
+        </footer>
+      </div>
+      <!-- Edit Profile Modal -->
+      <div class="modal" id="profile-edit-modal">
+        <div class="modal__container">
+          <div class="modal__content">
+            <button class="modal__close" id="profile-modal-close"></button>
+            <p class="modal__heading">Edit Profile</p>
+            <form class="modal__form" id="modal-form-1">
+              <input
+                type="text"
+                name="name"
+                class="modal__input"
+                id="profile-name-input"
+                placeholder="Your Name"
+                maxlength="40"
+                minlength="2"
+                required
+              />
+              <span class="modal__error" id="profile-name-input-error"></span>
+              <input
+                type="text"
+                name="badge"
+                class="modal__input"
+                id="profile-badge-input"
+                placeholder="Badge"
+                minlength="2"
+                maxlength="200"
+                required
+              />
+              <span class="modal__error" id="profile-badge-input-error"></span>
+              <button class="modal__button" type="submit">Save</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- Card Add Modal -->
+      <div class="modal" id="card-add-modal">
+        <div class="modal__container">
+          <div class="modal__content">
+            <button class="modal__close" id="card-modal-close"></button>
+            <h2 class="modal__heading">New Place</h2>
+            <form class="modal__form" id="modal-form-2">
+              <input
+                type="text"
+                name="name"
+                class="modal__input"
+                placeholder="Title"
+                minlength="1"
+                maxlength="30"
+                id="card-title-input"
+                required
+              />
+              <span class="modal__error" id="card-title-input-error"></span>
+              <input
+                type="url"
+                name="cardUrl"
+                class="modal__input"
+                placeholder="Image URL"
+                id="card-url-input"
+                required
+              />
+              <span class="modal__error" id="card-url-input-error"></span>
+              <button class="modal__button" type="submit" disabled>Save</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- Image Preview Modal  -->
+      <div class="modal" id="image-preview-modal">
+        <div class="modal__container_image">
+          <img
+            class="modal__preview-image"
+            alt="image of clicked card, refer to title"
+            src=""
+            id="modal-preview-image-src"
+          />
+          <button class="modal__close" id="image-modal-close"></button>
+          <p class="modal__image-preview_text"></p>
+        </div>
+      </div>
+      <!-- Card Delete Popup -->
+      <div class="modal" id="delete-check-modal">
+        <div class="modal__container_delete-check">
+          <div class="modal__content">
+            <button class="modal__close" id="delete-modal-close"></button>
+            <h2 class="modal__heading_delete-check">Are you sure?</h2>
+            <form action="post">
+              <button class="modal__button_delete-check" type="submit">
+                Yes
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- Avatar Picture Popup -->
+      <div class="modal" id="avatar-change-modal">
+        <div class="modal__container">
+          <div class="modal__content">
+            <button class="modal__close" id="card-modal-close"></button>
+            <h2 class="modal__heading">Change Profile Picture</h2>
+            <form class="modal__form" id="modal-form-3">
+              <input
+                type="url"
+                name="avatarUrl"
+                class="modal__input"
+                placeholder="Image URL"
+                id="image-url-input"
+                required
+              />
+              <span class="modal__error" id="image-url-input-error"></span>
+              <button class="modal__button" type="submit" disabled>Save</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <template id="card-template">
+      <div class="card">
+        <img src="" alt="" class="card__image" />
+        <div class="card__info">
+          <h2 class="card__title"></h2>
+
+          <button
+            class="card__delete-button"
+            aria-label="Card delete button, user interaction"
+            type="button"
+          >
+            <img
+              src="<%=require('./images/trash-can.svg')%>"
+              alt="Trash can shaped delete button"
+              class="card__delete-button_image"
+            />
+          </button>
+
+          <button
+            class="heart-button"
+            aria-label="Interaction or like button"
+            type="button"
+          >
+            <img
+              src="<%=require('./images/heart-button.svg')%>"
+              alt="Heart shaped post interaction button"
+              class="heart-button__image"
+            />
+          </button>
+        </div>
+      </div>
+    </template>
+  </body>
+</html>

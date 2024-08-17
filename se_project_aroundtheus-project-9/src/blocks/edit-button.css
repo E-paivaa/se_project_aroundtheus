@@ -1,0 +1,55 @@
+.edit-button {
+  width: 24px;
+  height: 24px;
+  border: solid 1px #fff;
+  background-color: #000;
+  margin: 25px 0 0 18px;
+  align-self: center;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.edit-button__image {
+  width: 10px;
+  height: 10px;
+  margin: auto;
+}
+
+.edit-button__image-avatar {
+  width: 26px;
+  height: 26px;
+  margin: auto;
+}
+
+.edit-button:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 770px) {
+  .edit-button {
+    transition: opacity 2s ease-in-out;
+  }
+}
+
+@media screen and (max-width: 637px) {
+  .edit-button {
+    margin: 0 0 6px 18px;
+  }
+}
+
+@media screen and (max-width: 515px) {
+  .edit-button {
+    width: 18px;
+    height: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .edit-button__image {
+    width: 7.5px;
+    height: 7.5px;
+    margin: auto;
+  }
+}
