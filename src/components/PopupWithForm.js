@@ -12,12 +12,6 @@ export default class PopupWithForm extends Popup {
     super.close(this._modal);
   }
 
-  setLoading(isLoading, text) {
-    const modalButton = this._modal.querySelector(".modal__button");
-    console.log(modalButton);
-    modalButton.textContent = isLoading ? text : "Save";
-  }
-
   _getInputValues() {
     const formValues = {};
     this._inputList.forEach((inputEl) => {

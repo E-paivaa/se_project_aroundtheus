@@ -34,6 +34,10 @@
   height: 19px;
 }
 
+.card__delete-button_image:hover {
+  opacity: 0.5;
+}
+
 .card__info {
   display: flex;
   flex-direction: row;

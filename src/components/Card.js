@@ -4,8 +4,7 @@ export default class Card {
     cardSelector,
     handleImageClick,
     handleDeleteClick,
-    handleCardLike,
-    checkIfLiked
+    handleCardLike
   ) {
     this._isLiked = isLiked;
     this._id = _id;
@@ -15,7 +14,6 @@ export default class Card {
     this._handleImageClick = handleImageClick;
     this._handleDeleteClick = handleDeleteClick;
     this._handleCardLike = handleCardLike;
-    this._checkIfLiked = checkIfLiked;
   }
 
   _setEventListeners() {
@@ -41,7 +39,6 @@ export default class Card {
 
   //  LIKE BUTTON
   _handleHeartButton() {
-    console.log(this._cardElement);
     this._cardElement
       .querySelector(".heart-button")
       .classList.toggle("heart-button_active");
@@ -51,6 +48,18 @@ export default class Card {
   domDeleteCard() {
     this._cardElement.remove();
     this._cardElement = null;
+  }
+
+  _checkIfLiked() {
+    if (this._isLiked) {
+      this._cardElement
+        .querySelector(".heart-button")
+        .classList.add("heart-button_active");
+    } else {
+      this._cardElement
+        .querySelector(".heart-button")
+        .classList.remove("heart-button_active");
+    }
   }
 
   // CARD FUNCTION
@@ -64,7 +73,7 @@ export default class Card {
     this._cardImageEl.src = this._link;
     this._cardImageEl.alt = this._name;
     this._cardTitleEl.textContent = this._name;
-    this._checkIfLiked(this._isLiked, this._cardElement);
+    this._checkIfLiked();
 
     return this._cardElement;
   }
