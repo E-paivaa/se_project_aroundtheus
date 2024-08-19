@@ -205,16 +205,14 @@ function handleAvatarChangeSubmit(Url) {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // LIKE & UNLIKE FUNCTION
-function handleCardLike(cardId, isLiked) {
-  if (isLiked === true) {
-    api.addLikes(cardId).then((res) => {
-      console.log(res);
-    });
-  } else {
-    api.removeLikes(cardId).then((res) => {
-      console.log(res);
-    });
-  }
+function handleCardLike(card) {
+  api.addLikes(card._id).then((res) => {
+    console.log(res);
+  });
+  api.removeLikes(card._id).then((res) => {
+    console.log(res);
+  });
+  card.setLiked();
 }
 
 //////////////////////////////////////////////////  ADD EVENT LISTENERS ///////////////////////////////////////////////////////////////////////////////////
