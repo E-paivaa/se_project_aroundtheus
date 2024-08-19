@@ -129,9 +129,18 @@ function makeCard(cardData) {
     cardTemplate,
     handleImageClick,
     handleDeleteClick,
-    handleCardLike
+    handleCardLike,
+    checkIfLiked
   );
   return card.generateCard();
+}
+
+function checkIfLiked(ifLiked, element) {
+  if (ifLiked === true) {
+    element
+      .querySelector(".heart-button")
+      .classList.toggle("heart-button_active");
+  }
 }
 
 // DELETE
@@ -205,16 +214,23 @@ function handleAvatarChangeSubmit(Url) {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // LIKE & UNLIKE FUNCTION
-function handleCardLike(card) {
-  api.addLikes(card._id).then((res) => {
+function handleCardLike(cardData) {
+  // if (!cardData._isLiked) {
+  //   api.addLikes(cardData._id).then((res) => {
+  //     cardData.setLikes(res.isLiked);
+  //   });
+  // } else {
+  //   api.removeLikes(cardData._id).then(() => {
+  //     cardData.setLikes(res.isLiked);
+  //   });
+  // }
+  api.addLikes(cardData._id).then((res) => {
     console.log(res);
   });
-  api.removeLikes(card._id).then((res) => {
+  api.removeLikes(cardData._id).then(() => {
     console.log(res);
   });
-  card.setLiked();
 }
-
 //////////////////////////////////////////////////  ADD EVENT LISTENERS ///////////////////////////////////////////////////////////////////////////////////
 
 // PROFILE
