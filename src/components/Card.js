@@ -47,6 +47,23 @@ export default class Card {
       .classList.toggle("heart-button_active");
   }
 
+  // setLikes(isLiked) {
+  //   this._isLiked = isLiked;
+  //   this._renderLike();
+  // }
+
+  // _renderLike() {
+  //   if (this._isLiked === true) {
+  //     this._cardElement
+  //       .querySelector(".heart-button")
+  //       .classList.add("heart-button_active");
+  //   } else {
+  //     this._cardElement
+  //       .querySelector(".heart-button")
+  //       .classList.remove("heart-button_active");
+  //   }
+  // }
+
   // DELETE CARD
   domDeleteCard() {
     this._cardElement.remove();
@@ -64,8 +81,8 @@ export default class Card {
     this._cardImageEl.src = this._link;
     this._cardImageEl.alt = this._name;
     this._cardTitleEl.textContent = this._name;
+    // this._renderLike();
     this._checkIfLiked(this._isLiked, this._cardElement);
-
     return this._cardElement;
   }
 }

@@ -201,6 +201,11 @@
   transition: opacity 0.5s ease-in-out;
 }
 
+.modal__button_delete-check:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
 .modal__button_disabled {
   margin: 18.91px 0 0;
   opacity: 0.2;

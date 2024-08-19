@@ -16,14 +16,6 @@ export default class PopupWithConfirm extends Popup {
     super.close(this._modal);
   }
 
-  setLoadingConfirm(isLoading, text) {
-    const modalButton = this._modal.querySelector(
-      ".modal__button_delete-check"
-    );
-    console.log(modalButton);
-    modalButton.textContent = isLoading ? text : "Save";
-  }
-
   setEventListeners() {
     super.setEventListeners();
     this._modal.addEventListener("submit", (e) => {

@@ -64,7 +64,7 @@ const api = new Api({
 api
   .getIntitialCards()
   .then((data) => {
-    cardSection.renderItems(data);
+    cardSection.renderItems(data.reverse());
   })
   .catch((err) => {
     console.error(err);
@@ -135,7 +135,6 @@ function makeCard(cardData) {
   return card.generateCard();
 }
 
-// LIKE
 function checkIfLiked(ifLiked, element) {
   if (ifLiked === true) {
     element
@@ -194,12 +193,11 @@ function handleCardAddSubmit({ name, cardUrl }) {
 
 // DELETE
 function handleCardDeleteSubmit(card) {
-  console.log(card._id);
   api.deleteCard(card._id).then((message) => {
     console.log(message);
-    card.domDeleteCard();
-    deleteConfirmModal.close();
   });
+  card.domDeleteCard();
+  deleteConfirmModal.close();
 }
 
 // AVATAR
@@ -217,18 +215,22 @@ function handleAvatarChangeSubmit(Url) {
 
 // LIKE & UNLIKE FUNCTION
 function handleCardLike(cardData) {
-  if (cardData.isLiked === false) {
-    api.addLikes(cardData._id).then((res) => {
-      console.log(res);
-    });
-  } else {
-    api.removeLikes(cardData._id).then((res) => {
-      console.log(res);
-    });
-    console.log(cardData._id);
-  }
+  // if (!cardData._isLiked) {
+  //   api.addLikes(cardData._id).then((res) => {
+  //     cardData.setLikes(res.isLiked);
+  //   });
+  // } else {
+  //   api.removeLikes(cardData._id).then(() => {
+  //     cardData.setLikes(res.isLiked);
+  //   });
+  // }
+  api.addLikes(cardData._id).then((res) => {
+    console.log(res);
+  });
+  api.removeLikes(cardData._id).then(() => {
+    console.log(res);
+  });
 }
-
 //////////////////////////////////////////////////  ADD EVENT LISTENERS ///////////////////////////////////////////////////////////////////////////////////
 
 // PROFILE
