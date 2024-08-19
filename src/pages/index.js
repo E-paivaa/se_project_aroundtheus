@@ -205,16 +205,14 @@ function handleAvatarChangeSubmit(Url) {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // LIKE & UNLIKE FUNCTION
-function handleCardLike(cardData) {
-  if (cardData.isLiked) {
-    api.removeLikes(cardData._id).then((res) => {
+function handleCardLike(cardId, isLiked) {
+  if (isLiked === true) {
+    api.addLikes(cardId).then((res) => {
       console.log(res);
-      cardData.isLiked === false;
     });
   } else {
-    api.addLikes(cardData._id).then((res) => {
+    api.removeLikes(cardId).then((res) => {
       console.log(res);
-      cardData.isLiked === true;
     });
   }
 }

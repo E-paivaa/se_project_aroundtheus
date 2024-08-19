@@ -21,7 +21,7 @@ export default class Card {
     const heart = this._cardElement.querySelector(".heart-button");
     heart.addEventListener("click", () => {
       this._handleHeartButton();
-      this._handleCardLike(this);
+      this._handleCardLike(this._id, this._setLiked());
     });
 
     // card delete button
@@ -37,29 +37,35 @@ export default class Card {
     });
   }
 
-  //  LIKE BUTTON
   _handleHeartButton() {
     this._cardElement
       .querySelector(".heart-button")
       .classList.toggle("heart-button_active");
   }
 
+  //  LIKE BUTTON
+  _setLiked() {
+    const likeButton = this._cardElement.querySelector(".heart-button");
+    if ((likeButton = this.classList.contains(".heart-button"))) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  // CHECK LIKE
+  _checkIfLiked(ifLiked, element) {
+    if (ifLiked === true) {
+      element
+        .querySelector(".heart-button")
+        .classList.toggle("heart-button_active");
+    }
+  }
+
   // DELETE CARD
   domDeleteCard() {
     this._cardElement.remove();
     this._cardElement = null;
-  }
-
-  _checkIfLiked() {
-    if (this._isLiked) {
-      this._cardElement
-        .querySelector(".heart-button")
-        .classList.add("heart-button_active");
-    } else {
-      this._cardElement
-        .querySelector(".heart-button")
-        .classList.remove("heart-button_active");
-    }
   }
 
   // CARD FUNCTION
@@ -73,7 +79,7 @@ export default class Card {
     this._cardImageEl.src = this._link;
     this._cardImageEl.alt = this._name;
     this._cardTitleEl.textContent = this._name;
-    this._checkIfLiked();
+    this._checkIfLiked(this._cardElement, this._isLiked);
 
     return this._cardElement;
   }
