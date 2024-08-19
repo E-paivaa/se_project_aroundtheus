@@ -1,56 +1,81 @@
 .card {
-  position: relative;
-  max-width: 282px;
-  min-height: 361px;
-  z-index: 0;
-  background-color: #fff;
   border-radius: 10px;
   overflow: hidden;
+  width: 282px;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  list-style: none;
 }
 
 .card__image {
-  max-width: 282px;
-  width: 100%;
+  width: 282px;
   height: 282px;
-  background-position: center;
-  background-size: cover;
-  object-fit: cover;
+  cursor: pointer;
+}
+
+.card__description {
+  display: flex;
+  background-color: #fff;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 20px;
+}
+
+.card__title {
+  white-space: nowrap;
+  overflow: hidden;
+  display: block;
+  text-overflow: ellipsis;
+  color: black;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-left: 20px;
+  margin-right: 34px;
+  font-size: 24px;
+  font-weight: 900;
+  font-family: "Inter", Arial, sans-serif;
+  line-height: 29px;
+  flex: 1 1 100%;
+  margin: 0;
+}
+
+.card__like-button {
+  display: flex;
+  flex: 0 0 21px;
+  background: transparent url(../images/Vectorheart.svg) center no-repeat;
+  border-color: transparent;
+  width: 21px;
+  height: 18px;
+  cursor: pointer;
+  padding-bottom: 30px;
+}
+
+.card__like-button_active {
+  background-image: url(../images/LikeActive.svg);
+}
+
+.card__like-button:hover {
+  opacity: 0.5;
+  cursor: pointer;
 }
 
 .card__delete-button {
   position: absolute;
+  background-image: url(../images/TrashInactive.svg);
+  background-color: transparent;
   top: 18px;
   right: 15px;
-  padding: 0;
-  background-color: transparent;
   border: none;
-  cursor: pointer;
-  width: 18px;
   height: 19px;
+  width: 18px;
 }
 
-.card__delete-button_image {
-  width: 18px;
-  height: 19px;
+.card__delete-button_active {
+  background-image: url(../images/Trashactive.svg);
 }
 
-.card__delete-button_image:hover {
+.card__delete-button:hover {
   opacity: 0.5;
-}
-
-.card__info {
-  display: flex;
-  flex-direction: row;
-}
-
-.card__title {
-  font-family: "Inter", Arial, Helvetica, sans-serif;
-  font-size: 24px;
-  line-height: 1.2;
-  font-weight: 900;
-  width: 100%;
-  margin: 25px 0 25px 20px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  cursor: pointer;
 }

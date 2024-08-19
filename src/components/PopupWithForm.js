@@ -1,33 +1,48 @@
 import Popup from "./Popup.js";
 
 export default class PopupWithForm extends Popup {
-  constructor(modalSelector, handleFormSubmit) {
-    super(modalSelector);
-    this._modalForm = this._modal.querySelector(".modal__form");
-    this._inputList = [...this._modalForm.querySelectorAll(".modal__input")];
+  constructor(popupSelector, handleFormSubmit) {
+    super({ popupSelector });
+    this._modalForm = this._popupElement.querySelector(".modal__form");
+    this._submitButton = this._modalForm.querySelector(".modal__button");
+    this._submitButtonText = this._submitButton.textContent;
     this._handleFormSubmit = handleFormSubmit;
   }
-
-  close() {
-    super.close(this._modal);
-  }
-
   _getInputValues() {
-    const formValues = {};
-    this._inputList.forEach((inputEl) => {
-      formValues[inputEl.name] = inputEl.value;
+    const inputValues = {};
+    this._modalForm.querySelectorAll(".modal__input").forEach((input) => {
+      inputValues[input.name] = input.value;
     });
-    console.log(formValues);
-    return formValues;
+    return inputValues;
   }
 
   setEventListeners() {
     super.setEventListeners();
-    this._modalForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-      console.log(this._getInputValues);
+    this._modalForm.addEventListener("submit", (evt) => {
+      evt.preventDefault();
       this._handleFormSubmit(this._getInputValues());
-      this._modalForm.reset();
     });
+  }
+
+  open(data) {
+    this._data = data;
+    super.open();
+  }
+
+  close() {
+    this._modalForm.reset();
+    super.close();
+  }
+
+  setSubmitAction(handleFormSubmit) {
+    this._handleFormSubmit = handleFormSubmit;
+  }
+
+  renderLoading(isLoading, message = "Saving...") {
+    if (isLoading) {
+      this._submitButton.textContent = message;
+    } else {
+      this._submitButton.textContent = this._submitButtonText;
+    }
   }
 }

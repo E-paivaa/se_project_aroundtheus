@@ -1,25 +1,30 @@
-Project 3: Around The U.S.
+# Project Name: Around The U.S.
 
-    -Intro
+Overview:
 
-This project is the third project on tripleten used to implement the understanding of grids and developing knowledge of css and html
+- Intro
+- Figma
+- Images
 
--Figma Imitation
+**Intro**
+This project is made so all the elements are displayed correctly on popular screen sizes. To fit as a responsive website between desktop, and mobile per figma, but also see usage in Tablet mode as well.
+HTML, and CSS were used in creating this responsive website with the use of grid and flex box. As such I invested a lot more time in this project than previous ones combining what I had learned through the past 3 courses.
 
-[Link to the project on Figma]
-OG: (https://www.figma.com/file/ii4xxsJ0ghevUOcssTlHZv/Sprint-3%3A-Around-the-US?node-id=0%3A1)
-My Version: (https://e-paivaa.github.io/se_project_aroundtheus/)
+**Figma**
 
--Images
+- [Link to the project on Figma](https://www.figma.com/file/Es8zZP3ARGH9JGcw60i3OD/Sprint-3_-Around-the-US?node-id=7505-2&t=f3To4EqmqKQbNuuL-0)
 
-The way you'll do this at work is by exporting images directly from Figma. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster.
+- [Link to project on Github](https://kingmemnon.github.io/se_project_aroundtheus/)
 
-    -5-10 Mins. AROUND THE U.S. VIDEO
+**IMAGES**
 
-[https://drive.google.com/file/d/1dLRx48xWEjePAuILssEdgPgcaiuK4kuU/view?usp=sharing]
+- [Link to Desktop view](https://gyazo.com/300980c6ba965ec6c63087ded376df08)
 
-Quick run through/process on how my project breaks down and how i achieved what i did
+- [Link to tablet view](https://gyazo.com/0ac0537aa2db4ca414d1f31605df9356)
 
-    -Ways to improve project
+-[Link to mobile view](https://gyazo.com/6b49ffad0c382bc11c50a31b9043443e)
 
-Developing more interactive functions so the project become more lively
+**WEBSITE**
+
+[Link to Final Website view](https://kingmemnon.github.io/se_project_aroundtheus/)
+

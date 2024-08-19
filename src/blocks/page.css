@@ -1,32 +1,24 @@
 .page {
-  min-width: 320px;
+  background-color: black;
+  color: white;
+}
+
+.page__section {
+  max-width: 880px;
   width: 100%;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  background: black;
+  position: relative;
+  margin: 0 auto;
 }
 
 .page__content {
-  max-width: 880px;
-  width: 100%;
-  box-sizing: border-box;
-  margin: 0 auto;
-  font-family: "Inter", Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 0 19px;
 }
 
-@media screen and (max-width: 915px) {
+@media screen and (max-width: 480px) {
   .page__content {
-    margin: 0 20px;
-    max-width: 100%;
-  }
-}
-
-@media screen and (max-width: 637px) {
-  .page__content {
-    margin: 0;
     padding: 0;
   }
 }
