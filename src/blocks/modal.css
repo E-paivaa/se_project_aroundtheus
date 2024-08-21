@@ -26,7 +26,7 @@
   position: relative;
   max-width: 430px;
   width: 100%;
-  min-height: 330px;
+  min-height: 202px;
   padding: 36px;
   border-radius: 10px;
 }
@@ -55,7 +55,6 @@
 .modal__heading {
   color: #000;
   height: 23px;
-  margin-bottom: 54px;
   left: 461px;
   font-family: "Inter", Arial, sans-serif;
   font-weight: 900;
@@ -116,7 +115,7 @@
   border: none;
   border-radius: 2px;
   padding: 0 36px;
-  margin-top: 48px;
+  margin-top: 38px;
 }
 
 .modal__button:disabled {
@@ -183,7 +182,7 @@
   position: relative;
   max-width: 430px;
   width: 100%;
-  min-height: 272px;
+  min-height: 202px;
   padding: 36px;
   border-radius: 10px;
 }

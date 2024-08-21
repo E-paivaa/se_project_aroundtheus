@@ -9,7 +9,6 @@ import {
   newCardEditForm,
   avatarForm,
   changeAvatarImageButton,
-  removeCardForm,
 } from "../utils/constants.js";
 import Card from "../components/Card.js";
 import Api from "../components/Api.js";
@@ -31,9 +30,6 @@ addCardValidator.enableValidation();
 // AVATAR
 const avatarFormValidator = new FormValidator(config, avatarForm);
 avatarFormValidator.enableValidation();
-// DELETE CARD
-const removeCardValidator = new FormValidator(config, removeCardForm);
-removeCardValidator.enableValidation();
 
 /////////////////////////////////////////////////////////// API ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -209,6 +205,7 @@ profileEditButton.addEventListener("click", () => {
   const currentUserInfo = userInfo.getUserInfo();
   profileTitleInput.value = currentUserInfo.name;
   profileDescriptionInput.value = currentUserInfo.about;
+  editProfileValidator.resetValidation();
   profileEditPopup.open();
 });
 
@@ -221,6 +218,7 @@ profileAddButton.addEventListener("click", () => {
 
 // CHANGE AVATAR
 changeAvatarImageButton.addEventListener("click", () => {
+  avatarFormValidator._toggleButtonState();
   avatarFormValidator.resetValidation();
   avatarModalPopup.open();
 });

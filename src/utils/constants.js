@@ -48,7 +48,6 @@ export const cardListEl = document.querySelector(".cards__list");
 
 
 export const removeCardModal = document.querySelector("#remove-card-modal");
-export const removeCardForm = document.querySelector("#remove-card-form");
 
 
 export const imagePopupModal = document.querySelector("#preview-image-modal");
