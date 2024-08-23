@@ -202,14 +202,12 @@ function handleLikeClick(card) {
 
 // PROFILE EDIT
 profileEditButton.addEventListener("click", () => {
+  editProfileValidator.resetValidation();
   const currentUserInfo = userInfo.getUserInfo();
   profileTitleInput.value = currentUserInfo.name;
   profileDescriptionInput.value = currentUserInfo.about;
-  editProfileValidator.resetValidation();
   profileEditPopup.open();
 });
-
-addCardPopup.setEventListeners();
 
 profileAddButton.addEventListener("click", () => {
   addCardValidator.resetValidation();
@@ -218,12 +216,12 @@ profileAddButton.addEventListener("click", () => {
 
 // CHANGE AVATAR
 changeAvatarImageButton.addEventListener("click", () => {
-  avatarFormValidator._toggleButtonState();
-  avatarFormValidator.resetValidation();
+  avatarFormValidator.toggleButtonState();
   avatarModalPopup.open();
 });
 
-imagePopup.setEventListeners();
 profileEditPopup.setEventListeners();
+addCardPopup.setEventListeners();
+imagePopup.setEventListeners();
 avatarModalPopup.setEventListeners();
 deleteCardModal.setEventListeners();
