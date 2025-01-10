@@ -24,11 +24,6 @@ export default class PopupWithForm extends Popup {
     });
   }
 
-  open(data) {
-    this._data = data;
-    super.open();
-  }
-
   close() {
     this._modalForm.reset();
     super.close();
